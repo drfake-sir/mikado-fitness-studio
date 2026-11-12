@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#08080a">
+<meta name="theme-color" content="#f4f0e8">
 <meta name="description" content="Mikado Fitness Studio — a coach-led strength and fitness studio in Valasaravakkam, Chennai. Open 7 days. Book a free trial session.">
 <title>Mikado Fitness Studio — Strength is a practice · Valasaravakkam, Chennai</title>
 <script type="application/ld+json">
@@ -30,7 +30,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Dela+Gothic+One&family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&family=Noto+Serif+JP:wght@700&display=swap" rel="stylesheet">
 <script>
-try{var t=localStorage.getItem('mikado-theme');if(t)document.documentElement.dataset.theme=t;}catch(e){}
+try{
+  var t=localStorage.getItem('mikado-theme')||'light';
+  document.documentElement.dataset.theme=t;
+}catch(e){document.documentElement.dataset.theme='light';}
 try{
   var mkReduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var mkNoIntro=/[?&]nointro(?:=1)?(?:&|$)/.test(location.search);
@@ -4549,7 +4552,7 @@ main > section:not(.hero)::before{
     });
   })();
 
-  /* ---------- theme (dark is the default) ---------- */
+  /* ---------- theme (light is the default; choice is remembered) ---------- */
   var toggle=document.querySelector('[data-theme-toggle]');
   function isLight(){ return root.dataset.theme==='light'; }
   function syncTheme(){
